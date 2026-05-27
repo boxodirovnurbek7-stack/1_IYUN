@@ -1,0 +1,2236 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-Iyun — Xalqaro Bollar Kuni 🎉</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --yellow: #FFD93D;
+            --orange: #FF6B35;
+            --pink: #FF4E91;
+            --purple: #7B2FBE;
+            --blue: #00B4D8;
+            --green: #06D6A0;
+            --red: #EF233C;
+            --light: #FFF8F0;
+            --white: #ffffff;
+            --dark: #1a1a2e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: var(--light);
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        /* Custom cursor */
+        .cursor {
+            width: 20px;
+            height: 20px;
+            background: var(--pink);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 99999;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s, background 0.3s, width 0.3s, height 0.3s;
+            mix-blend-mode: multiply;
+        }
+
+        .cursor-ring {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--orange);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 99998;
+            transform: translate(-50%, -50%);
+            transition: all 0.15s ease;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(20px);
+            border-bottom: 3px solid var(--yellow);
+            padding: 12px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-logo {
+            font-family: 'Baloo 2', cursive;
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--orange), var(--pink), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: logoShimmer 3s ease infinite;
+        }
+
+        @keyframes logoShimmer {
+
+            0%,
+            100% {
+                filter: brightness(1);
+            }
+
+            50% {
+                filter: brightness(1.3);
+            }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: 25px;
+            color: var(--dark);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--yellow), var(--orange));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s;
+            border-radius: 25px;
+            z-index: -1;
+        }
+
+        .nav-links a:hover::before {
+            transform: scaleX(1);
+        }
+
+        .nav-links a:hover {
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(160deg, #fff0fa 0%, #e8f4ff 40%, #fff9e6 70%, #f0fff4 100%);
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 40px 20px;
+        }
+
+        .hero-date {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--orange), var(--red));
+            color: white;
+            font-weight: 800;
+            font-size: 1.1rem;
+            padding: 8px 24px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            animation: bounceIn 1s ease backwards;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+            letter-spacing: 2px;
+        }
+
+        .hero-emoji-row {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: bounceIn 1s 0.2s ease backwards;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .hero-emoji-row span {
+            display: inline-block;
+            animation: emojiDance 2s ease-in-out infinite;
+        }
+
+        .hero-emoji-row span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .hero-emoji-row span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .hero-emoji-row span:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .hero-emoji-row span:nth-child(5) {
+            animation-delay: 0.8s;
+        }
+
+        @keyframes emojiDance {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-15px) rotate(-5deg);
+            }
+
+            75% {
+                transform: translateY(-8px) rotate(5deg);
+            }
+        }
+
+        .hero-title {
+            font-family: 'Baloo 2', cursive;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            animation: bounceIn 1s 0.3s ease backwards;
+        }
+
+        .hero-title .line1 {
+            background: linear-gradient(135deg, var(--orange), var(--red), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+        }
+
+        .hero-title .line2 {
+            background: linear-gradient(135deg, var(--purple), var(--blue), var(--green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #555;
+            margin-bottom: 40px;
+            animation: bounceIn 1s 0.5s ease backwards;
+            font-weight: 600;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: bounceIn 1s 0.7s ease backwards;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.05rem;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.2);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s;
+        }
+
+        .btn:hover::after {
+            transform: scaleX(1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--orange), var(--pink));
+            color: white;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 107, 53, 0.5);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--purple), var(--blue));
+            color: white;
+            box-shadow: 0 8px 25px rgba(123, 47, 190, 0.4);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(123, 47, 190, 0.5);
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: translateY(40px) scale(0.9);
+            }
+
+            60% {
+                transform: translateY(-10px) scale(1.02);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* SECTIONS GENERAL */
+        section {
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: 'Baloo 2', cursive;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .section-desc {
+            font-size: 1.1rem;
+            color: #666;
+            margin-top: 12px;
+            font-weight: 600;
+        }
+
+        /* COUNTER SECTION */
+        .counter-section {
+            padding: 60px 40px;
+            background: linear-gradient(135deg, var(--purple), var(--blue));
+            position: relative;
+        }
+
+        .counter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .counter-card {
+            text-align: center;
+            color: white;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .counter-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .counter-num {
+            font-family: 'Baloo 2', cursive;
+            font-size: 3.5rem;
+            font-weight: 800;
+            display: block;
+            line-height: 1;
+        }
+
+        .counter-label {
+            font-size: 1rem;
+            font-weight: 700;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        .counter-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* TIMER */
+        .timer-section {
+            padding: 80px 40px;
+            background: linear-gradient(135deg, #fff0fa, #fff9e6);
+            text-align: center;
+        }
+
+        .timer-box {
+            display: inline-flex;
+            gap: 20px;
+            background: white;
+            border-radius: 30px;
+            padding: 30px 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .timer-unit {
+            text-align: center;
+            min-width: 90px;
+        }
+
+        .timer-num {
+            font-family: 'Baloo 2', cursive;
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--orange), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            display: block;
+            animation: timerPulse 1s ease infinite;
+        }
+
+        @keyframes timerPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .timer-label {
+            font-weight: 800;
+            color: #888;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .timer-sep {
+            font-family: 'Baloo 2', cursive;
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--orange);
+            line-height: 1;
+            align-self: flex-start;
+            margin-top: 2px;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* RIGHTS SECTION */
+        .rights-section {
+            padding: 100px 40px;
+            background: white;
+        }
+
+        .rights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .right-card {
+            border-radius: 24px;
+            padding: 35px 30px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .right-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .right-card:hover::before {
+            opacity: 1;
+        }
+
+        .right-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .right-card-1 {
+            background: linear-gradient(135deg, #FF6B35, #FF8E53);
+            color: white;
+        }
+
+        .right-card-2 {
+            background: linear-gradient(135deg, #7B2FBE, #9D4EDD);
+            color: white;
+        }
+
+        .right-card-3 {
+            background: linear-gradient(135deg, #00B4D8, #0096C7);
+            color: white;
+        }
+
+        .right-card-4 {
+            background: linear-gradient(135deg, #06D6A0, #05C091);
+            color: white;
+        }
+
+        .right-card-5 {
+            background: linear-gradient(135deg, #FF4E91, #FF6B9D);
+            color: white;
+        }
+
+        .right-card-6 {
+            background: linear-gradient(135deg, #FFD93D, #FFB800);
+            color: var(--dark);
+        }
+
+        .right-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+            animation: iconBounce 2s ease infinite;
+        }
+
+        @keyframes iconBounce {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(-10deg);
+            }
+
+            75% {
+                transform: rotate(10deg);
+            }
+        }
+
+        .right-title {
+            font-family: 'Baloo 2', cursive;
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .right-desc {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            font-weight: 600;
+        }
+
+       
+        .gallery-section {
+            padding: 100px 40px;
+            background: linear-gradient(135deg, #f8f0ff, #fff0f8, #f0f8ff);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            aspect-ratio: 4/3;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.04) rotate(1deg);
+            z-index: 10;
+        }
+
+        .gallery-item:nth-child(even):hover {
+            transform: scale(1.04) rotate(-1deg);
+        }
+
+        .gallery-item.tall {
+            grid-row: span 2;
+            aspect-ratio: unset;
+            min-height: 400px;
+        }
+
+        .gallery-item.wide {
+            grid-column: span 2;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            text-align: center;
+            min-height: 220px;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-caption {
+            color: white;
+            font-weight: 800;
+            font-size: 1.1rem;
+            font-family: 'Baloo 2', cursive;
+            transform: translateY(10px);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        .g1 {
+            background: linear-gradient(135deg, #FF6B35, #FFD93D);
+        }
+
+        .g2 {
+            background: linear-gradient(135deg, #7B2FBE, #FF4E91);
+        }
+
+        .g3 {
+            background: linear-gradient(135deg, #00B4D8, #06D6A0);
+        }
+
+        .g4 {
+            background: linear-gradient(135deg, #FF4E91, #FF6B35);
+        }
+
+        .g5 {
+            background: linear-gradient(135deg, #06D6A0, #00B4D8);
+        }
+
+        .g6 {
+            background: linear-gradient(135deg, #FFD93D, #FF6B35);
+        }
+
+        .g7 {
+            background: linear-gradient(135deg, #FF4E91, #7B2FBE);
+        }
+
+        .g8 {
+            background: linear-gradient(135deg, #0096C7, #7B2FBE);
+        }
+
+        .g9 {
+            background: linear-gradient(135deg, #06D6A0, #FFD93D);
+        }
+
+        /* PARK SECTION */
+        .park-section {
+            padding: 100px 40px;
+            background: linear-gradient(160deg, #e8fff4 0%, #f0fff9 100%);
+        }
+
+        .park-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .park-card {
+            background: white;
+            border-radius: 24px;
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-bottom: 5px solid transparent;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .park-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--border-color, var(--green));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s;
+        }
+
+        .park-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .park-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .park-card:nth-child(1) {
+            --border-color: var(--green);
+        }
+
+        .park-card:nth-child(2) {
+            --border-color: var(--blue);
+        }
+
+        .park-card:nth-child(3) {
+            --border-color: var(--orange);
+        }
+
+        .park-card:nth-child(4) {
+            --border-color: var(--pink);
+        }
+
+        .park-card:nth-child(5) {
+            --border-color: var(--purple);
+        }
+
+        .park-card:nth-child(6) {
+            --border-color: var(--yellow);
+        }
+
+        .park-emoji {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            display: block;
+            animation: wiggle 3s ease-in-out infinite;
+        }
+
+        @keyframes wiggle {
+
+            0%,
+            100% {
+                transform: rotate(-5deg);
+            }
+
+            50% {
+                transform: rotate(5deg);
+            }
+        }
+
+        .park-title {
+            font-family: 'Baloo 2', cursive;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .park-text {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+            font-weight: 600;
+        }
+
+      
+        .games-section {
+            padding: 100px 40px;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+        }
+
+        .games-section .section-title {
+            color: white;
+        }
+
+        .games-section .section-desc {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .game-card {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--glow-color, var(--orange)), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .game-card:hover::before {
+            opacity: 0.3;
+        }
+
+        .game-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            border-color: var(--glow-color, var(--orange));
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px var(--glow-color, var(--orange));
+        }
+
+        .game-card:nth-child(1) {
+            --glow-color: var(--green);
+        }
+
+        .game-card:nth-child(2) {
+            --glow-color: var(--orange);
+        }
+
+        .game-card:nth-child(3) {
+            --glow-color: var(--blue);
+        }
+
+        .game-card:nth-child(4) {
+            --glow-color: var(--pink);
+        }
+
+        .game-card:nth-child(5) {
+            --glow-color: var(--yellow);
+        }
+
+        .game-card:nth-child(6) {
+            --glow-color: var(--purple);
+        }
+
+        .game-card:nth-child(7) {
+            --glow-color: #FF6B35;
+        }
+
+        .game-card:nth-child(8) {
+            --glow-color: var(--green);
+        }
+
+        .game-emoji {
+            font-size: 3rem;
+            margin-bottom: 12px;
+            display: block;
+            transition: transform 0.3s;
+        }
+
+        .game-card:hover .game-emoji {
+            transform: scale(1.3) rotate(10deg);
+        }
+
+        .game-name {
+            color: white;
+            font-family: 'Baloo 2', cursive;
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .game-desc {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            font-weight: 600;
+        }
+
+  
+        .congrats-section {
+            padding: 100px 40px;
+            background: linear-gradient(135deg, #FFF9E6, #FFF0FA, #E8F4FF);
+            text-align: center;
+        }
+
+        .congrats-card {
+            max-width: 750px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 40px;
+            padding: 60px 50px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .congrats-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, var(--orange), var(--pink), var(--purple), var(--blue), var(--green), var(--yellow));
+            background-size: 200%;
+            animation: rainbowSlide 3s linear infinite;
+        }
+
+        @keyframes rainbowSlide {
+            0% {
+                background-position: 0%;
+            }
+
+            100% {
+                background-position: 200%;
+            }
+        }
+
+        .congrats-big-emoji {
+            font-size: 5rem;
+            display: block;
+            animation: superBounce 1s ease infinite;
+        }
+
+        @keyframes superBounce {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-20px) scale(1.1);
+            }
+        }
+
+        .congrats-title {
+            font-family: 'Baloo 2', cursive;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 20px 0 15px;
+            background: linear-gradient(135deg, var(--orange), var(--pink), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .congrats-text {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .congrats-kids {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .kid-bubble {
+            background: linear-gradient(135deg, var(--yellow), var(--orange));
+            color: white;
+            font-weight: 800;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            animation: bubbleFloat ease-in-out infinite alternate;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .kid-bubble:hover {
+            transform: scale(1.1);
+        }
+
+        .kid-bubble:nth-child(odd) {
+            background: linear-gradient(135deg, var(--pink), var(--purple));
+            animation-duration: 2s;
+        }
+
+        .kid-bubble:nth-child(3n) {
+            background: linear-gradient(135deg, var(--blue), var(--green));
+            animation-duration: 2.5s;
+        }
+
+        @keyframes bubbleFloat {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-8px);
+            }
+        }
+
+        
+        .music-section {
+            padding: 60px 40px;
+            background: linear-gradient(135deg, var(--pink), var(--purple));
+            text-align: center;
+        }
+
+        .music-player {
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .music-title-bar {
+            color: white;
+            font-family: 'Baloo 2', cursive;
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .music-sub {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+
+        .music-disc {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--yellow), var(--orange));
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: spinning 3s linear infinite paused;
+            position: relative;
+        }
+
+        .music-disc.playing {
+            animation-play-state: running;
+        }
+
+        @keyframes spinning {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .music-disc::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+        }
+
+        .music-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .music-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .music-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+        }
+
+        .music-btn.play-btn {
+            width: 65px;
+            height: 65px;
+            background: white;
+            color: var(--pink);
+            font-size: 1.6rem;
+        }
+
+        .music-btn.play-btn:hover {
+            transform: scale(1.15);
+            background: var(--yellow);
+            color: var(--dark);
+        }
+
+        .music-bars {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            margin-top: 20px;
+            height: 40px;
+            align-items: flex-end;
+        }
+
+        .bar {
+            width: 6px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 3px;
+            animation: musicBar ease-in-out infinite alternate;
+        }
+
+        .bar:nth-child(1) {
+            animation-duration: 0.4s;
+        }
+
+        .bar:nth-child(2) {
+            animation-duration: 0.6s;
+        }
+
+        .bar:nth-child(3) {
+            animation-duration: 0.3s;
+        }
+
+        .bar:nth-child(4) {
+            animation-duration: 0.5s;
+        }
+
+        .bar:nth-child(5) {
+            animation-duration: 0.45s;
+        }
+
+        .bar:nth-child(6) {
+            animation-duration: 0.55s;
+        }
+
+        .bar:nth-child(7) {
+            animation-duration: 0.35s;
+        }
+
+        @keyframes musicBar {
+            0% {
+                height: 5px;
+            }
+
+            100% {
+                height: 35px;
+            }
+        }
+
+        
+        .facts-section {
+            padding: 100px 40px;
+            background: white;
+        }
+
+        .facts-scroll {
+            display: flex;
+            gap: 25px;
+            overflow-x: auto;
+            padding: 20px 10px 40px;
+            max-width: 1300px;
+            margin: 0 auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--pink) transparent;
+        }
+
+        .facts-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .facts-scroll::-webkit-scrollbar-thumb {
+            background: var(--pink);
+            border-radius: 3px;
+        }
+
+        .fact-card {
+            min-width: 280px;
+            border-radius: 24px;
+            padding: 35px 30px;
+            flex-shrink: 0;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .fact-card:nth-child(1) {
+            background: linear-gradient(135deg, #FFD93D, #FF6B35);
+        }
+
+        .fact-card:nth-child(2) {
+            background: linear-gradient(135deg, #00B4D8, #7B2FBE);
+        }
+
+        .fact-card:nth-child(3) {
+            background: linear-gradient(135deg, #06D6A0, #00B4D8);
+        }
+
+        .fact-card:nth-child(4) {
+            background: linear-gradient(135deg, #FF4E91, #FF6B35);
+        }
+
+        .fact-card:nth-child(5) {
+            background: linear-gradient(135deg, #7B2FBE, #FF4E91);
+        }
+
+        .fact-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .fact-num {
+            font-family: 'Baloo 2', cursive;
+            font-size: 3rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1;
+        }
+
+        .fact-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-top: 8px;
+        }
+
+     
+        .wishes-section {
+            padding: 100px 40px;
+            background: linear-gradient(135deg, #f0f8ff, #fff0f8);
+        }
+
+        .wishes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .wish-card {
+            background: white;
+            border-radius: 24px;
+            padding: 35px 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            position: relative;
+            border-left: 5px solid var(--wish-color, var(--orange));
+        }
+
+        .wish-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .wish-card:nth-child(1) {
+            --wish-color: var(--orange);
+        }
+
+        .wish-card:nth-child(2) {
+            --wish-color: var(--pink);
+        }
+
+        .wish-card:nth-child(3) {
+            --wish-color: var(--purple);
+        }
+
+        .wish-card:nth-child(4) {
+            --wish-color: var(--blue);
+        }
+
+        .wish-card:nth-child(5) {
+            --wish-color: var(--green);
+        }
+
+        .wish-card:nth-child(6) {
+            --wish-color: var(--yellow);
+        }
+
+        .wish-quote {
+            font-size: 3rem;
+            color: var(--wish-color, var(--orange));
+            line-height: 0.5;
+            margin-bottom: 15px;
+            font-family: 'Baloo 2', cursive;
+        }
+
+        .wish-text {
+            font-size: 1rem;
+            color: #444;
+            line-height: 1.8;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .wish-author {
+            font-weight: 800;
+            color: var(--wish-color, var(--orange));
+            font-size: 0.9rem;
+        }
+
+    
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 60px 40px;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--orange), var(--pink), var(--purple), var(--blue), var(--green), var(--yellow), var(--orange));
+            background-size: 300%;
+            animation: rainbowSlide 4s linear infinite;
+        }
+
+        .footer-emoji-row {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .footer-title {
+            font-family: 'Baloo 2', cursive;
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--yellow), var(--orange), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .footer-sub {
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .footer-love {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .footer-love span {
+            color: var(--pink);
+        }
+
+  
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .lightbox-content {
+            max-width: 80vw;
+            max-height: 80vh;
+            border-radius: 24px;
+            overflow: hidden;
+            transform: scale(0.8);
+            transition: transform 0.3s;
+        }
+
+        .lightbox.active .lightbox-content {
+            transform: scale(1);
+        }
+
+        .lightbox-inner {
+            width: 600px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .lightbox-close:hover {
+            transform: rotate(90deg) scale(1.1);
+        }
+
+       
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--orange), var(--pink));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+            z-index: 999;
+            transition: all 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255, 107, 53, 0.5);
+        }
+
+        
+        .popup-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 9998;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s;
+        }
+
+        .popup-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .popup-box {
+            background: white;
+            border-radius: 30px;
+            padding: 50px 40px;
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            position: relative;
+            transform: scale(0.8) translateY(30px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+        }
+
+        .popup-overlay.active .popup-box {
+            transform: scale(1) translateY(0);
+        }
+
+        .popup-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--orange), var(--pink), var(--purple), var(--blue));
+            background-size: 200%;
+            animation: rainbowSlide 2s linear infinite;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #f5f5f5;
+            border: none;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .popup-close:hover {
+            background: #ffe0e0;
+        }
+
+        .popup-emoji {
+            font-size: 4rem;
+            display: block;
+            animation: superBounce 1s infinite;
+        }
+
+        .popup-title {
+            font-family: 'Baloo 2', cursive;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 15px 0 10px;
+            background: linear-gradient(135deg, var(--orange), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .popup-text {
+            color: #666;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        .popup-btn {
+            margin-top: 25px;
+            padding: 12px 35px;
+            background: linear-gradient(135deg, var(--orange), var(--pink));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 800;
+            cursor: pointer;
+            font-family: 'Nunito', sans-serif;
+            transition: transform 0.3s;
+        }
+
+        .popup-btn:hover {
+            transform: scale(1.05);
+        }
+
+       
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1);
+        }
+
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1);
+        }
+
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+      
+        @media (max-width: 768px) {
+            nav {
+                padding: 12px 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 70px;
+            }
+
+            .gallery-item.wide {
+                grid-column: span 1;
+            }
+
+            .gallery-item.tall {
+                grid-row: span 1;
+            }
+
+            .timer-box {
+                padding: 20px 25px;
+            }
+
+            .timer-num {
+                font-size: 2.5rem;
+            }
+
+            .timer-sep {
+                font-size: 2.5rem;
+            }
+
+            .congrats-card {
+                padding: 40px 25px;
+            }
+
+            .congrats-title {
+                font-size: 2rem;
+            }
+
+            .rights-section,
+            .gallery-section,
+            .park-section,
+            .games-section,
+            .congrats-section,
+            .wishes-section,
+            .facts-section {
+                padding: 70px 20px;
+            }
+
+            .timer-section {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+
+<nav>
+    <div class="nav-logo">🎈 1-Iyun Bollar Kuni</div>
+    <ul class="nav-links">
+        <li><a href="#home">Bosh sahifa</a></li>
+        <li><a href="#rights">Huquqlar</a></li>
+        <li><a href="#gallery">Galereya</a></li>
+        <li><a href="#park">Park</a></li>
+        <li><a href="#games">O'yinlar</a></li>
+        <li><a href="#congrats">Tabriklar</a></li>
+    </ul>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <div class="hero-date">🗓 1-IYUN 2025</div>
+        <div class="hero-emoji-row">
+            <span>🎉</span>
+            <span>🌈</span>
+            <span>🎈</span>
+            <span>⭐</span>
+            <span>🎊</span>
+        </div>
+        <h1 class="hero-title">
+            <span class="line1">Xalqaro Bollar Kuni</span>
+            <span class="line2">Muborak Bo'lsin! 🎁</span>
+        </h1>
+        <p class="hero-subtitle">Dunyodagi barcha bollar — baxt va sevgiga loyiq! 💖</p>
+        <div class="hero-btns">
+            <a href="#congrats" class="btn btn-primary">🎉 Tabriklarni Ko'rish</a>
+            <a href="#rights" class="btn btn-secondary">📜 Bollar Huquqlari</a>
+        </div>
+    </div>
+</section>
+
+
+<section class="counter-section">
+    <div class="counter-grid">
+        <div class="counter-card reveal">
+            <span class="counter-icon">👶</span>
+            <span class="counter-num" data-target="2200000000">0</span>
+            <div class="counter-label">Dunyodagi bollar soni</div>
+        </div>
+        <div class="counter-card reveal">
+            <span class="counter-icon">🌍</span>
+            <span class="counter-num" data-target="195">0</span>
+            <div class="counter-label">Bayram o'tkaziladigan davlatlar</div>
+        </div>
+        <div class="counter-card reveal">
+            <span class="counter-icon">📚</span>
+            <span class="counter-num" data-target="1959">0</span>
+            <div class="counter-label">Bollar huquqlari e'lon yili</div>
+        </div>
+        <div class="counter-card reveal">
+            <span class="counter-icon">🏆</span>
+            <span class="counter-num" data-target="54">0</span>
+            <div class="counter-label">Bollar huquqlari moddasi</div>
+        </div>
+    </div>
+</section>
+
+
+<section class="timer-section" id="timer">
+    <div class="section-header reveal">
+        <span class="section-tag" style="background:linear-gradient(135deg,var(--orange),var(--pink));color:white;">⏰ HISOBLAGICH</span>
+        <h2 class="section-title">🎉 1-Iyungacha Qolgan Vaqt</h2>
+        <p class="section-desc">Bayramni birgalikda kutamiz!</p>
+    </div>
+    <div class="timer-box reveal">
+        <div class="timer-unit">
+            <span class="timer-num" id="days">00</span>
+            <span class="timer-label">Kun</span>
+        </div>
+        <div class="timer-sep">:</div>
+        <div class="timer-unit">
+            <span class="timer-num" id="hours">00</span>
+            <span class="timer-label">Soat</span>
+        </div>
+        <div class="timer-sep">:</div>
+        <div class="timer-unit">
+            <span class="timer-num" id="minutes">00</span>
+            <span class="timer-label">Daqiqa</span>
+        </div>
+        <div class="timer-sep">:</div>
+        <div class="timer-unit">
+            <span class="timer-num" id="seconds">00</span>
+            <span class="timer-label">Soniya</span>
+        </div>
+    </div>
+</section>
+
+
+<section class="rights-section" id="rights">
+    <div class="section-header reveal">
+        <span class="section-tag" style="background:linear-gradient(135deg,var(--purple),var(--blue));color:white;">⚖️ HUQUQLAR</span>
+        <h2 class="section-title">Bollarning Asosiy Huquqlari</h2>
+        <p class="section-desc">Har bir bola tug'ilishidanoq bu huquqlarga ega!</p>
+    </div>
+    <div class="rights-grid">
+        <div class="right-card right-card-1 reveal">
+            <span class="right-icon">🏫</span>
+            <div class="right-title">Ta'lim Huquqi</div>
+            <p class="right-desc">Har bir bola sifatli ta'lim olishga haqli. Bilim — kelajakning kaliti, hech bir bola undan mahrum bo'lmasligi kerak!</p>
+        </div>
+        <div class="right-card right-card-2 reveal">
+            <span class="right-icon">🏥</span>
+            <div class="right-title">Sog'liq Huquqi</div>
+            <p class="right-desc">Bolalar tibbiy yordam va sog'lom yashash sharoitlariga ega bo'lishga haqli. Sog'lom bola — baxtli bola!</p>
+        </div>
+        <div class="right-card right-card-3 reveal">
+            <span class="right-icon">🛡️</span>
+            <div class="right-title">Himoya Huquqi</div>
+            <p class="right-desc">Bolalar har qanday zo'ravonlik, ekspluatatsiya va xavfdan himoya qilinishi kerak. Xavfsizlik — eng muhim huquq!</p>
+        </div>
+        <div class="right-card right-card-4 reveal">
+            <span class="right-icon">🎮</span>
+            <div class="right-title">O'yin va Dam Olish</div>
+            <p class="right-desc">O'yin bolaning haqqi! Har bir bola o'ynash, dam olish va ijod qilish imkoniyatiga ega bo'lishi zarur.</p>
+        </div>
+        <div class="right-card right-card-5 reveal">
+            <span class="right-icon">👨‍👩‍👧</span>
+            <div class="right-title">Oila Huquqi</div>
+            <p class="right-desc">Har bir bola oila muhitida, sevgi va g'amxo'rlik bilan o'sishga haqli. Oila — bolaning birinchi maktabi!</p>
+        </div>
+        <div class="right-card right-card-6 reveal">
+            <span class="right-icon">🗣️</span>
+            <div class="right-title">Fikr Bildirish Huquqi</div>
+            <p class="right-desc">Bolalar o'z fikrlarini erkin bildirish va eshitilishga haqli. Har bir bola ovoziga ega!</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="gallery-section" id="gallery">
+    <div class="section-header reveal">
+        <span class="section-tag" style="background:linear-gradient(135deg,var(--pink),var(--orange));color:white;">📸 GALEREYA</span>
+        <h2 class="section-title">Quvnoq Bollar Olamida</h2>
+        <p class="section-desc">Bollikning eng chiroyli lahzalari! 💫</p>
+    </div>
+    <div class="gallery-grid">
+        <div class="gallery-item tall g1 reveal" onclick="openLightbox('🎠','Karusel o'ynayotgan bolalar')">
+            <div class="gallery-img">🎠<br>🧒👦👧</div>
+            <div class="gallery-overlay"><div class="gallery-caption">🎠 Karuseldagi Quvonch</div></div>
+        </div>
+        <div class="gallery-item g2 reveal" onclick="openLightbox('⚽','Futbol o'ynayotgan bolalar')">
+            <div class="gallery-img">⚽🏃‍♂️</div>
+            <div class="gallery-overlay"><div class="gallery-caption">⚽ Futbol Maydoni</div></div>
+        </div>
+        <div class="gallery-item g3 reveal" onclick="openLightbox('🎨','Rasm chizayotgan bolalar')">
+            <div class="gallery-img">🎨🖌️</div>
+            <div class="gallery-overlay"><div class="gallery-caption">🎨 Ijodkor Bolalar</div></div>
+        </div>
+        <div class="gallery-item wide g4 reveal" onclick="openLightbox('🎡','Attraksion parki')">
+            <div class="gallery-img">🎡🎢🎪</div>
+            <div class="gallery-overlay"><div class="gallery-caption">🎡 Quvonch Parki</div></div>
+        </div>
+        <div class="gallery-item g5 reveal" onclick="openLightbox('🌊','Suvda o'ynayotgan bolalar')">
+            <div class="gallery-img">🌊🏊‍♂️</div>
+            <div class="gallery-overlay"><div class="gallery-caption">🌊 Yoz Shodiyonasi</div></div>
+        </div>
+        <div class="gallery-item g6 reveal" onclick="openLightbox('📚','Kitob o'qiyotgan bolalar')">
+            <div class="gallery-img">📚✏️</div>
+            <div class="gallery-overlay"><div class="gallery-caption">📚 Bilimli Bolalar</div></div>
+        </div>
+        <div class="gallery-item tall g7 reveal" onclick="openLightbox('🎭','Teatr bolalar')">
+            <div class="gallery-img">🎭🎪<br>🤹</div>
+            <div class="gallery-overlay"><div class="gallery-caption">🎭 Teatr Bolalari</div></div>
+        </div>
+        <div class="gallery-item g8 reveal" onclick="openLightbox('🎵','Musiqa ijro etayotgan bolalar')">
+            <div class="gallery-img">🎵🎶</div>
+            <div class="gallery-overlay"><div class="gallery-caption">🎵 Musiqachi Bolalar</div></div>
+        </div>
+        <div class="gallery-item g9 reveal" onclick="openLightbox('🌸','Gul bogʻida bolalar')">
+            <div class="gallery-img">🌸🌺</div>
+            <div class="gallery-overlay"><div class="gallery-caption">🌸 Bog' Sayrida</div></div>
+        </div>
+    </div>
+</section>
+
+
+<section class="park-section" id="park">
+    <div class="section-header reveal">
+        <span class="section-tag" style="background:linear-gradient(135deg,var(--green),var(--blue));color:white;">🌳 PARK</span>
+        <h2 class="section-title">Parkdagi Sarguzashtlar</h2>
+        <p class="section-desc">Tabiat qo'ynida quvonchli dam olish! 🌈</p>
+    </div>
+    <div class="park-cards">
+        <div class="park-card reveal"><span class="park-emoji">🛝</span><div class="park-title">Ariqcha va Siljovuch</div><p class="park-text">Yangi qurilgan zamonaviy o'yin maydonchalari bolalar uchun cheksiz quvonch manbai! Siljovuchda uchish — oliy lazzat!</p></div>
+        <div class="park-card reveal"><span class="park-emoji">🚲</span><div class="park-title">Velosiped Yo'llari</div><p class="park-text">Parkda maxsus velosiped yo'llari bor. Bolalar xavfsiz muhitda velosiped haydashni o'rganishlari mumkin!</p></div>
+        <div class="park-card reveal"><span class="park-emoji">🌺</span><div class="park-title">Gul Bog'lari</div><p class="park-text">Rangbarang gullar orasida sayr qilish — bolalar va ota-onalar uchun unutilmas lahzalar yaratadi!</p></div>
+        <div class="park-card reveal"><span class="park-emoji">🦢</span><div class="park-title">Ko'l va Qushlar</div><p class="park-text">Ko'lchalardagi oqqushlar va o'rdaklar bolalar uchun tabiiy zoo bo'lib xizmat qiladi. Tabiiy dunyo bilan tanishuv!</p></div>
+        <div class="park-card reveal"><span class="park-emoji">🍦</span><div class="park-title">Muzdek Muzqaymoq</div><p class="park-text">Issiq yoz kuni parkda muzqaymoq yeyish — eng yoqimli xotiralar! Rangbarang muzqaymoqlar tayyorlangan.</p></div>
+        <div class="park-card reveal"><span class="park-emoji">⛺</span><div class="park-title">Piknik Maydoni</div><p class="park-text">Oilalar uchun maxsus piknik maydonlari. Birgalikda taom yeyish va dam olish — eng baxtli lahzalar!</p></div>
+    </div>
+</section>
+
+<section class="games-section" id="games">
+    <div class="section-header reveal"><span class="section-tag" style="background:rgba(255,255,255,0.2);color:white;border:1px solid rgba(255,255,255,0.3);">🎮 O'YINLAR</span><h2 class="section-title">Bollar Sevgan O'yinlar</h2><p class="section-desc" style="color:rgba(255,255,255,0.7);">Keling birgalikda o'ynaymiz! Har bir o'yin — yangi do'stlik! 🤝</p></div>
+    <div class="games-grid">
+        <div class="game-card reveal"><span class="game-emoji">⚽</span><div class="game-name">Futbol</div><p class="game-desc">Jamoa o'yini. Birlik va do'stlikni mustahkamlaydi. Eng sevimli sport!</p></div>
+        <div class="game-card reveal"><span class="game-emoji">🏀</span><div class="game-name">Basketbol</div><p class="game-desc">Baland irg'ish va aniq nishon olish. Kuch va epchillikni rivojlantiradi!</p></div>
+        <div class="game-card reveal"><span class="game-emoji">🎾</span><div class="game-name">Tennis</div><p class="game-desc">Tez harakatlar va strategik fikrlash. Bolalar uchun ajoyib sport turi!</p></div>
+        <div class="game-card reveal"><span class="game-emoji">🏊</span><div class="game-name">Suzish</div><p class="game-desc">Suvda suzish — salomatlik va quvonch. Har bir bola suzishni o'rganishi kerak!</p></div>
+        <div class="game-card reveal"><span class="game-emoji">🎨</span><div class="game-name">Rasm Chizish</div><p class="game-desc">Ijodiy fikrlash va tasavvurni rivojlantiradi. San'at dunyosiga kirish!</p></div>
+        <div class="game-card reveal"><span class="game-emoji">🧩</span><div class="game-name">Boshqotirma</div><p class="game-desc">Mantiqiy fikrlashni mustahkamlaydi. Qiyinchiliklarni yechishdan zavq olish!</p></div>
+        <div class="game-card reveal"><span class="game-emoji">🏇</span><div class="game-name">Chopish Musobaqasi</div><p class="game-desc">Tezkorlik va bardoshni oshiradi. Birinchi bo'lish — g'alaba his-tuyg'usi!</p></div>
+        <div class="game-card reveal"><span class="game-emoji">🎸</span><div class="game-name">Musiqa Ijrosi</div><p class="game-desc">Musiqa qalbni boyitadi. Bolalar musiqani sevishi va o'rganishi — buyuk saodat!</p></div>
+    </div>
+</section>
+
+
+<section class="congrats-section" id="congrats">
+    <div class="section-header reveal"><span class="section-tag" style="background:linear-gradient(135deg,var(--yellow),var(--orange));color:white;">🎉 TABRIKLAR</span><h2 class="section-title">Aziz Bolalar, Muborak Bo'lsin!</h2></div>
+    <div class="congrats-card reveal">
+        <span class="congrats-big-emoji">🎊</span>
+        <div class="congrats-title">1-Iyun Bollar Kuni Muborak!</div>
+        <p class="congrats-text">Aziz bolalar! Bugun sizlarning bayramingiz — 1-Iyun Xalqaro Bollar Kuni! Siz hayotning eng go'zal guli, kelajakning umidi va dunyoning eng qimmatli boyligisiz. Har biringiz o'ziga xos, ajoyib va unutilmas! Sizlarning kulib turgan yuzlaringiz dunyoni yanada chiroyli qiladi. 🌟<br><br>Baxtli, sog'lom va quvnoq bo'linglar! Orzularingiz amalga oshsin, sevimli o'yinlaringizda g'olib chiqinglar va har doim yorug' kelajakka intiling! 💫</p>
+        <div class="congrats-kids">
+            <span class="kid-bubble">🎈 Baxtli Bo'linglar!</span>
+            <span class="kid-bubble">⭐ Sog'lom Yashanglar!</span>
+            <span class="kid-bubble">🌈 Orzularingiz Uchsin!</span>
+            <span class="kid-bubble">📚 Bilim Olinglar!</span>
+            <span class="kid-bubble">🤝 Do'st Bo'linglar!</span>
+            <span class="kid-bubble">💖 Sevilamiz!</span>
+        </div>
+    </div>
+</section>
+
+
+<section class="facts-section">
+    <div class="section-header reveal"><span class="section-tag" style="background:linear-gradient(135deg,var(--blue),var(--purple));color:white;">💡 FAKTLAR</span><h2 class="section-title">Qiziqarli Faktlar</h2><p class="section-desc">Bilasizmi? Bollar haqida ajoyib ma'lumotlar!</p></div>
+    <div class="facts-scroll">
+        <div class="fact-card reveal"><span class="fact-emoji">🌍</span><div class="fact-num">2.2 mlrd</div><div class="fact-text">Dunyoda 2.2 milliarddan ortiq bola yashaydi — bu yer aholisining 26%!</div></div>
+        <div class="fact-card reveal"><span class="fact-emoji">📅</span><div class="fact-num">1950</div><div class="fact-text">1-Iyun Bollar Kuni birinchi marta 1950 yilda butun dunyo bo'ylab nishonlandi!</div></div>
+        <div class="fact-card reveal"><span class="fact-emoji">😂</span><div class="fact-num">400x</div><div class="fact-text">Bolalar kattalardan 400 marta ko'proq kuladi! Kulinchi — bolaning eng go'zal xususiyati!</div></div>
+        <div class="fact-card reveal"><span class="fact-emoji">🧠</span><div class="fact-num">90%</div><div class="fact-text">Miya rivojlanishining 90% 5 yoshgacha bo'lgan davrda sodir bo'ladi!</div></div>
+        <div class="fact-card reveal"><span class="fact-emoji">🎮</span><div class="fact-num">75%</div><div class="fact-text">O'yin orqali bolalar ko'nikma va bilimlarining 75%ni o'zlashtirishadi!</div></div>
+    </div>
+</section>
+
+
+<section class="wishes-section" id="wishes">
+    <div class="section-header reveal"><span class="section-tag" style="background:linear-gradient(135deg,var(--orange),var(--yellow));color:white;">💌 TILAKLAR</span><h2 class="section-title">Muhabbatli Tilaklar</h2><p class="section-desc">Bollarimizga eng chiroyli tilaklar! 🌷</p></div>
+    <div class="wishes-grid">
+        <div class="wish-card reveal"><div class="wish-quote">"</div><p class="wish-text">Aziz bolalar, sizlar dunyoning eng go'zal gullaridir. Har bir kuningiz quyosh nurida, kulgu bilan to'lsin! Baxtingiz bepoyon bo'lsin!</p><div class="wish-author">💝 Ota-onalar nomidan</div></div>
+        <div class="wish-card reveal"><div class="wish-quote">"</div><p class="wish-text">Bolalar — kelajakning umidi! Sog'lom o'sing, ko'p bilim oling va o'z Vataniga munosib farzand bo'linglar! Siz bilan faxrlanamiz!</p><div class="wish-author">🏫 O'qituvchilar nomidan</div></div>
+        <div class="wish-card reveal"><div class="wish-quote">"</div><p class="wish-text">Har bir bola o'z orzusiga ega bo'lishga haqli! Orzularingizdan qo'rqmang, ularga qadam-baqadam yuring. Biz sizlar bilan birgamiz!</p><div class="wish-author">⭐ Jamoa nomidan</div></div>
+        <div class="wish-card reveal"><div class="wish-quote">"</div><p class="wish-text">Kulgining ovozi, oyoqlarning tovushi, quvonchli chaqnash — bularning barchasi siz bolalarsiz! Dunyomizni chiroyli qilganingiz uchun rahmat!</p><div class="wish-author">🌍 Dunyo nomidan</div></div>
+        <div class="wish-card reveal"><div class="wish-quote">"</div><p class="wish-text">Do'stlaringizni qadrlang, tabiatni sevinglar, kitob o'qinglar. Bilim — eng katta boylik, do'stlik — eng katta zavq!</p><div class="wish-author">📚 Kutubxonadan</div></div>
+        <div class="wish-card reveal"><div class="wish-quote">"</div><p class="wish-text">Bayram muborak! Har bir kuningizdagi kichkina quvonchlar — hayotning eng katta bayrami. Ko'proq kulinglar, ko'proq o'yininglar!</p><div class="wish-author">🎊 Bayram namoyishi</div></div>
+    </div>
+</section>
+
+<section class="music-section">
+    <div class="section-header reveal"><h2 class="section-title" style="color:white;">🎵 Bayram Musiqasi</h2><p class="section-desc" style="color:rgba(255,255,255,0.8);">Bayram ruhiga mos musiqa bilan birga kuylaymiz!</p></div>
+    <div class="music-player reveal">
+        <div class="music-title-bar">🎶 Bollar Bayram Qo'shig'i</div>
+        <div class="music-sub">1-Iyun — Xalqaro Bollar Kuni</div>
+        <div class="music-disc" id="musicDisc">🎵</div>
+        <div class="music-controls">
+            <button class="music-btn" onclick="prevTrack()">⏮</button>
+            <button class="music-btn play-btn" id="playBtn" onclick="togglePlay()">▶</button>
+            <button class="music-btn" onclick="nextTrack()">⏭</button>
+        </div>
+        <div class="music-bars" id="musicBars">
+            <div class="bar" style="height:15px"></div><div class="bar" style="height:25px"></div><div class="bar" style="height:10px"></div><div class="bar" style="height:30px"></div><div class="bar" style="height:20px"></div><div class="bar" style="height:35px"></div><div class="bar" style="height:12px"></div>
+        </div>
+    </div>
+</section>
+
+
+<footer>
+    <div class="footer-emoji-row"><span>👶</span><span>🧒</span><span>👦</span><span>👧</span><span>🧑</span><span>🌈</span><span>⭐</span><span>🎈</span><span>💖</span><span>🌟</span></div>
+    <div class="footer-title">1-Iyun Bollar Kuni — Muborak!</div>
+    <p class="footer-sub">Har bir bola baxt, sevgi va himoyaga loyiq!</p>
+    <p class="footer-love">Bollar uchun <span>❤️</span> sevgi bilan yaratildi | O'zbekiston 2025</p>
+</footer>
+
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <div class="lightbox-content" onclick="event.stopPropagation()"><div class="lightbox-inner" id="lightboxContent"></div></div>
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+</div>
+
+
+<div class="popup-overlay" id="popup">
+    <div class="popup-box">
+        <button class="popup-close" onclick="closePopup()">✕</button>
+        <span class="popup-emoji">🎉</span>
+        <div class="popup-title">Xush Kelibsiz!</div>
+        <p class="popup-text">1-Iyun Xalqaro Bollar Kuni sahifasiga xush kelibsiz! Barcha bollarimizga bayram muborak bo'lsin! 🌈</p>
+        <button class="popup-btn" onclick="closePopup()">🎈 Bayramga Kirish!</button>
+    </div>
+</div>
+
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+   
+    const cursor = document.getElementById('cursor');
+    const cursorRing = document.getElementById('cursorRing');
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
+
+    document.addEventListener('mousemove', e => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursor.style.left = mouseX + 'px';
+        cursor.style.top = mouseY + 'px';
+    });
+
+    function animateCursorRing() {
+        ringX += (mouseX - ringX) * 0.12;
+        ringY += (mouseY - ringY) * 0.12;
+        cursorRing.style.left = ringX + 'px';
+        cursorRing.style.top = ringY + 'px';
+        requestAnimationFrame(animateCursorRing);
+    }
+    animateCursorRing();
+
+ 
+    document.querySelectorAll('a, button, .gallery-item, .right-card, .park-card, .game-card, .fact-card, .wish-card, .kid-bubble').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.style.width = '30px';
+            cursor.style.height = '30px';
+            cursor.style.background = 'var(--yellow)';
+        });
+        el.addEventListener('mouseleave', () => {
+            cursor.style.width = '20px';
+            cursor.style.height = '20px';
+            cursor.style.background = 'var(--pink)';
+        });
+    });
+
+   
+    function updateTimer() {
+        const now = new Date();
+        const target = new Date(now.getFullYear(), 5, 1);
+        if (now > target) target.setFullYear(now.getFullYear() + 1);
+        const diff = target - now;
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+        document.getElementById('days').textContent = String(d).padStart(2, '0');
+        document.getElementById('hours').textContent = String(h).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(m).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(s).padStart(2, '0');
+    }
+    setInterval(updateTimer, 1000);
+    updateTimer();
+
+
+    function animateCounter(el) {
+        const target = parseInt(el.getAttribute('data-target'));
+        const duration = 2000;
+        const start = performance.now();
+        function update(now) {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = Math.floor(eased * target);
+            if (target >= 1000000) {
+                el.textContent = (current / 1000000).toFixed(1) + ' mlrd';
+            } else {
+                el.textContent = current.toLocaleString();
+            }
+            if (progress < 1) requestAnimationFrame(update);
+        }
+        requestAnimationFrame(update);
+    }
+
+ 
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => entry.target.classList.add('visible'), i * 80);
+                const counter = entry.target.querySelector('[data-target]');
+                if (counter && !counter.classList.contains('counted')) {
+                    counter.classList.add('counted');
+                    animateCounter(counter);
+                }
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+
+    
+    document.querySelectorAll('[data-target]').forEach(el => {
+        const parentObs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting && !e.target.classList.contains('counted')) {
+                    e.target.classList.add('counted');
+                    animateCounter(e.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        parentObs.observe(el);
+    });
+
+    
+    const scrollTopBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) scrollTopBtn.classList.add('visible');
+        else scrollTopBtn.classList.remove('visible');
+    });
+
+   
+    function openLightbox(emoji, caption) {
+        const lb = document.getElementById('lightbox');
+        const content = document.getElementById('lightboxContent');
+        content.innerHTML = `<div style="text-align:center"><div style="font-size:6rem">${emoji}</div><div style="color:white;font-family:'Baloo 2',cursive;font-size:1.5rem;font-weight:800;margin-top:15px">${caption}</div></div>`;
+        lb.classList.add('active');
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').classList.remove('active');
+    }
+
+    
+    function closePopup() {
+        document.getElementById('popup').classList.remove('active');
+    }
+
+    
+    setTimeout(() => {
+        document.getElementById('popup').classList.add('active');
+    }, 1500);
+
+    // Music player
+    let isPlaying = false;
+    const tracks = ['🎵 Bollar Bayram Qo'shig'i', '🎶 Quvnoq Bolalar Nag'masi', '🎼 Xalqaro Bollar Kuni Marshi'];
+    let currentTrack = 0;
+
+    function togglePlay() {
+        isPlaying = !isPlaying;
+        const btn = document.getElementById('playBtn');
+        const disc = document.getElementById('musicDisc');
+        btn.textContent = isPlaying ? '⏸' : '▶';
+        disc.classList.toggle('playing', isPlaying);
+    }
+
+    function prevTrack() {
+        currentTrack = (currentTrack - 1 + tracks.length) % tracks.length;
+        document.querySelector('.music-title-bar').textContent = tracks[currentTrack];
+    }
+
+    function nextTrack() {
+        currentTrack = (currentTrack + 1) % tracks.length;
+        document.querySelector('.music-title-bar').textContent = tracks[currentTrack];
+    }
+
+    
+    document.querySelectorAll('.kid-bubble').forEach(bubble => {
+        bubble.addEventListener('click', function() {
+            this.style.transform = 'scale(1.3)';
+            setTimeout(() => this.style.transform = '', 200);
+        });
+    });
+
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            e.preventDefault();
+            const target = document.querySelector(a.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+
+
+    document.querySelectorAll('.rights-grid, .park-cards, .games-grid, .wishes-grid').forEach(grid => {
+        const children = grid.querySelectorAll('.reveal');
+        const gridObserver = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting) {
+                children.forEach((child, i) => setTimeout(() => child.classList.add('visible'), i * 120));
+                gridObserver.disconnect();
+            }
+        }, { threshold: 0.1 });
+        gridObserver.observe(grid);
+    });
+
+    console.log('🎉 1-Iyun Bollar Kuni sayti muvaffaqiyatli yuklandi!');
+</script>
+</body>
+</html>
